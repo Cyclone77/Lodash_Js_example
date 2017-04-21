@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../../lodash.js"></script>
+</head>
+
+<body>
+    <script>
+        var showLable1 = _.debounce(function() {
+            console.log("3秒后显示,自定义!!");
+        }, 3000);
+
+        var p = false;
+    </script>
+</body>
+
+</html>

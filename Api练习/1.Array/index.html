@@ -13,46 +13,12 @@
 
     <button onclick="showLable1();">3秒后显示</button>
     <input type="checkbox" fid="s">
+    <div><label title=''>测试</label><input type="checkbox" name="xx"></div>
     <script>
         console.log(_.chunk(['a', 'b', 'c', 'd'], 2));
         //[['a','b'],['c','d']]
         console.log(_.chunk(['a', 'b', 'c', 'd'], 3));
         //[['a','b','c'],'d']
-
-        _.debounce(function() {
-            console.log("2秒后显示");
-        }, 2000)();
-
-
-        var showLable = _.debounce(function() {
-            console.log("3秒后显示")
-        }, 3000);
-
-        var processor = {
-            timeoutId: null,
-            //实际进行处理的方法
-            performprocessoring: function() {
-                console.log("3秒后显示,自定义");
-            },
-            //初始处理调用的方法
-            process: function(time) {
-                !this.timeoutId || clearTimeout(this.timeoutId);
-                var that = this;
-                this.timeoutId = setTimeout(function() {
-                    that.performprocessoring();
-                }, time || 500);
-                console.log(this.timeoutId);
-            }
-        }
-        //尝试开始执行
-        //processor.process();
-
-        var showLable1 = function() {
-            processor.process(3000);
-        }
-
-
-        var p = false;
     </script>
 </body>
 
